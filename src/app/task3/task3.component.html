@@ -1,0 +1,22 @@
+<div class="op">
+    <button class="btn btn-success" routerLink="/create">Create New TODO</button>
+    <br><br>
+    <table border=".1px">
+        <tr>
+          <th style="width: 50px;text-align: left;">ID</th>
+          <th style="width: 250px;text-align: left;">Title</th>
+          <th style="width: 700px;text-align: left;">Body</th>
+          <th style="width: 150px;text-align: left;">Action</th>
+        </tr>
+        <tr *ngFor="let person of users, let i= index">
+          <td>{{i+1}}</td>
+          <td>{{person.title}}</td>
+          <td>{{person.body}}</td>
+          <td>
+            <span><button class="btn btn-primary" routerLink="/update" (click)="edit(i)">edit</button>
+              <button class="btn btn-danger" (click)="del(i)">delete</button>
+            </span>
+          </td>
+        </tr>
+      </table>
+</div>

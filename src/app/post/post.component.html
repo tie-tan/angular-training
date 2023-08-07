@@ -1,0 +1,21 @@
+<div class="p">
+<h1 >Post Form</h1>
+<input type="text"  placeholder="post details" [(ngModel)]="phelabox" >
+<br><br>
+<textarea rows="10" cols="30" placeholder="post details" [(ngModel)]="dusrabox" ></textarea>
+<br><br>
+<input type="text"  placeholder="post image Url" [(ngModel)]="tsboxUrl">
+<br><br>
+<input type="text"  placeholder="post URL" [(ngModel)]="fboxUrl">
+<br><br>
+<input type="checkbox" (click)="onc()">Add Background
+<br>
+<span [style.background-color]="beta? 'red':''">{{phelabox}}</span>
+<br>
+{{dusrabox}}
+<br>
+<img [src]="tsboxUrl">
+<br>
+<a href="{{fboxUrl}}">{{vall}}</a>
+<br>
+</div>

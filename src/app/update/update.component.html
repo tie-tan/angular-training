@@ -1,0 +1,19 @@
+<div class="op">
+    <h2>UPDATE TODO</h2>
+    <button class="btn btn-primary" routerLink="" >Back</button>
+    <div class="form">
+        <div>
+            <br>
+            <label>Title:</label>
+            <br>
+            <input type="box" size="150px" value="{{titl}}" ngModel name="title" [(ngModel)]="titl">
+        </div>
+        <div>
+            <label>Body:</label>
+            <br>
+            <textarea  rows="5" value="{{bod}} " ngModel name="body" [(ngModel)]="bod"></textarea>
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="upd()" routerLink="">Update</button>
+</div>

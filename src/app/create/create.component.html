@@ -1,0 +1,19 @@
+<div class="op">
+    <h2>Create New TODO</h2>
+    <button class="btn btn-primary" routerLink="">Back</button>
+    <form #userform="ngForm" (ngSubmit)="details(userform.value)">
+        <div>
+            <br>
+            <label>Title:</label>
+            <br>
+            <input type="box" size="150px" ngModel name="title" [(ngModel)]="title">
+        </div>
+        <div>
+            <label>Body:</label>
+            <br>
+            <input type="textarea" size="150px" ngModel name="body" [(ngModel)]="body">
+        </div>
+        <br>
+        <button class="btn btn-primary" routerLink="" (click)="details(userform.value)" [disabled]="title.length==0 || body.length==0">Submit</button>
+    </form>
+</div>

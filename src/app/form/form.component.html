@@ -1,0 +1,30 @@
+<div class="raa">
+    <h1>User details</h1>
+    <br><br>
+    <input type="box" [(ngModel)]="var1" placeholder="name">
+    <br><br>
+    <input type="box" [(ngModel)]="var2" placeholder="mail@gmail.com" >
+    <br><br>
+    <textarea rows="10" cols="30"  [(ngModel)]="var3" placeholder="address"></textarea>
+    <br><br>
+    <button (click)="ram()">Save Data</button>
+    <br><br>
+</div>
+<div class="raam">
+    <table width="500">
+        <thead>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Action</th>
+        </thead>
+        <tr *ngFor="let i of arr; let val=index">
+            <td>{{val+1}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.mail}}</td>
+            <td>{{i.address}}</td>
+            <td><button (click)="delfun(val)">delete</button></td>
+        </tr>  
+    </table>
+</div>

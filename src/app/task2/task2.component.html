@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row ">
+      <div class="col-md-10 offset-md-1" style="background-color: white; height:610px">
+        <div class="row">
+            <div class="col-md-4" style="height:610px">
+                <img src="../../assets/logo-pic.png" style="width: 250px; margin-top: 60px; margin-left: 40px;">
+            </div>
+            <div class="col-md-8" style="height:610px; padding: 10px;">
+                <h3 style="margin-top: 40px; text-align: left;"> Sign up to get started!</h3>
+                <br><br>
+                <input type="text" placeholder="FirstName" style="margin-right:70px; outline: none;border: none; border-bottom: 1px solid black;">
+                <input type="text" placeholder="LastName" style="border: none; outline: none; border-bottom: 1px solid black;">
+                <br><br>
+                <input type="text" placeholder="Email" style="border: none; outline: none; border-bottom: 1px solid black;width: 443px;"
+                    class="form-control" 
+                    name="email"  ngModel 
+                    #email='ngModel' change="getvalue(email)" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required
+                >
+                    <div *ngIf="email.errors?.['required']">
+                        <div class="alert alert-danger" *ngIf='email.touched && email.invalid'>email is required.</div>
+                    </div>
+                    <div *ngIf="email.errors?.['pattern']">
+                        <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Invalid Email address</div>
+                    </div>
+                <br>
+
+
+                <input type="text" placeholder="Contact Number" style="border: none; outline: none; border-bottom: 1px solid black;width: 443px;">
+                <br><br>
+                <input type="text" placeholder="Password" style="border: none; outline: none; border-bottom: 1px solid black;width: 443px;"
+                [(ngModel)]="pas1"
+                    class="form-control" 
+                    name="pas"  ngModel 
+                    #pas='ngModel' change="getvalue(pas)" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required
+                >
+                <div *ngIf="pas.errors?.['required']">
+                    <div class="alert alert-danger" *ngIf='pas.touched && pas.invalid'>plz enter</div>
+                </div>
+                <div *ngIf="pas.errors?.['pattern']">
+                    <div class="alert alert-danger" *ngIf="pas.touched && pas.invalid">Invalid Password</div>
+                </div>
+                
+
+                <br><br>
+                <input type="text" placeholder="Confirm Password" style="border: none; outline: none; border-bottom: 1px solid black;width: 443px;"
+                [(ngModel)]="pas2">
+                <br><br>
+                <button (click)="onsubmit()">Sign UP</button>
+                <br><br>
+                <a href="#">Forget Password?</a><br><br>
+                <p>or sign up via <img src=""> <img src=""> <img src=""></p>
+                <p><span style="padding-right:60px">Already Have a account. </span><a href="#">Sign up</a></p>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+   
